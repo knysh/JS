@@ -1,0 +1,23 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "js cource",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knysh/JS.git"
+  },
+  "author": "ksn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knysh/JS/issues"
+  },
+  "homepage": "https://github.com/knysh/JS#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  }
+}
