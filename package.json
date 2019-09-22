@@ -4,7 +4,8 @@
   "description": "js cource",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0"
   }
 }

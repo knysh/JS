@@ -22,4 +22,14 @@ describe('Wait test', ()=>{
         const wait = new Wait();
         return wait.forFalse(()=>false, 5, 1000).then((result) => assert.isTrue(result));
     });
-})
+
+    it('Should wait for multiple "false"', async ()=>{
+        const wait = new Wait();
+        const results = await Promise.all([
+            wait.forFalse(()=>true, 5, 1000),
+            wait.forFalse(()=>false, 5, 1000)
+        ]);
+        assert.isFalse(results[0]);
+        assert.isTrue(results[1]);
+    });
+});
