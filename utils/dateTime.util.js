@@ -16,6 +16,13 @@ class DateTimeUtil {
         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
         return diffDays;
     }
+
+    getDate(daysOffset = 0){
+        var date = new Date();
+        date.setDate(date.getDate() + daysOffset);
+        console.log(date.toISOString().slice(0,10));
+        return date.toISOString().slice(0,10);
+    }
 }
 
 module.exports = new DateTimeUtil();

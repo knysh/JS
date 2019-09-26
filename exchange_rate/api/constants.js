@@ -1,0 +1,1 @@
+const exchangeUrl = "https://api.exchangeratesapi.io";
