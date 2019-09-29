@@ -1,12 +1,11 @@
 const {assert} = require('chai');
 const dateTime = require('../utils/dateTime.util');
-const log = require('../utils/log.util');
 
 describe('Date Time Test Suite', () => {
     it("should get today date", () => {
         var today = new Date().toDateString();
-        log.info(`Today is ${today}`);
-        assert.equal(dateTime.today().toDateString(), today, `Today date should be ${today}`);
+        var date = dateTime.getDate().toDateString();
+        assert.equal(date, today, `Today date should be ${today}`);
     });
 
     it("should be possible to set year", () => {
@@ -20,7 +19,7 @@ describe('Date Time Test Suite', () => {
         var today = new Date();
         var tommorrow = new Date();
         tommorrow.setDate(tommorrow.getDate() + 1);
-        var diff = dateTime.daysDifference(today, tommorrow);
+        var diff = dateTime.getDaysDiffs(today, tommorrow);
         assert.equal(1, diff, `Difference should be 1 day`);
     });
 });

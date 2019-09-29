@@ -1,17 +1,10 @@
-const log = require('../utils/log.util');
-
 class DateTimeUtil {
-
-    today(){
-        return new Date();
-    }
     
     setYear(date , year){
-        log.info(`set year value: ${year}`);
-        date.setFullYear(year);
-    } 
+        return date.setFullYear(year);
+    }
     
-    daysDifference(dateLeft, dateRight){
+    getDaysDiffs(dateLeft, dateRight){
         var timeDiff = Math.abs(dateLeft.getTime() - dateRight.getTime());
         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
         return diffDays;
@@ -23,7 +16,7 @@ class DateTimeUtil {
         return date;
     }
 
-    toStringDate(date){
+    toYYYYMMdd(date){
         return date.toISOString().slice(0,10);
     }
 }
