@@ -3,7 +3,7 @@ const log = require('../utils/log.util');
 class DateTimeUtil {
 
     today(){
-        return new Date().toDateString();
+        return new Date();
     }
     
     setYear(date , year){
@@ -20,7 +20,10 @@ class DateTimeUtil {
     getDate(daysOffset = 0){
         var date = new Date();
         date.setDate(date.getDate() + daysOffset);
-        console.log(date.toISOString().slice(0,10));
+        return date;
+    }
+
+    toStringDate(date){
         return date.toISOString().slice(0,10);
     }
 }

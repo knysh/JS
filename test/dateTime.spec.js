@@ -6,7 +6,7 @@ describe('Date Time Test Suite', () => {
     it("should get today date", () => {
         var today = new Date().toDateString();
         log.info(`Today is ${today}`);
-        assert.equal(dateTime.today(), today, `Today date should be ${today}`);
+        assert.equal(dateTime.today().toDateString(), today, `Today date should be ${today}`);
     });
 
     it("should be possible to set year", () => {
