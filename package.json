@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "test.google": "mocha test/google",
     "lint": "eslint . --fix"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "chromedriver": "^78.0.1",
     "mocha": "^6.2.0",
     "selenium-webdriver": "^4.0.0-alpha.5"
   },
