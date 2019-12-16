@@ -1,6 +1,6 @@
 {
     "startURL" : "http://google.com",
-    "implisitTimeout": 10000,
+    "implisitTimeout": 3000,
     "pageLoadTimeout": 30000,
     "scriptTimeout": 20000
 }

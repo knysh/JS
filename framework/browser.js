@@ -3,12 +3,12 @@ const { Builder, Capabilities } = require('selenium-webdriver');
 const config = require('../config.json');
 const logger = require('../utils/log.util');
 
-class Browser{
-    constructor(){
+class Browser {
+    constructor() {
         this.driver;
     }
 
-    async start(){
+    async start() {
         const capabilities = Capabilities.chrome();
         capabilities.set('chromeOptions', {
             'args': ['--disable-plugins']
@@ -23,33 +23,44 @@ class Browser{
                 script: config.scriptTimeout
             })
             logger.info('Browser is started');
-        } catch(error) {
+        } catch (error) {
             logger.warning(`Cannot start browser: ${error}`);
         }
     }
 
-    async quit(){
-        return new Promise((resolve, reject)=>{
-            try{
-                setTimeout(async ()=>{
+    async quit() {
+        return new Promise((resolve, reject) => {
+            try {
+                setTimeout(async () => {
                     await this.driver.quit();
                     resolve();
-                }, 100)            
+                }, 100)
             }
-            catch(error){
+            catch (error) {
                 logger.warning(`Error during closing browser: ${error}`);
                 reject();
             }
         })
     }
-        
 
-    async findElement(by, name){
+    async findElement(by, name) {
+        return this.driver.findElement(by).catch((error) => {
+            logger.warning(`Cannot find element ${error}: ${name}`);
+        });
+    }
+
+    async findElements(by, name) {
+        return this.driver.findElements(by).catch((error) => {
+            logger.warning(`Cannot find elements ${error}: ${name}`);
+        });
+    }
+
+    async isDisplayed(by, name) {
         try {
-            return this.driver.findElement(by);
+            return (await this.findElement(by, name)).isDisplayed();
         } catch (error) {
-            logger.warning(`Cannot find element ${name}. Error: ${error}`);
-        }        
+            return false;
+        }
     }
 }
 
