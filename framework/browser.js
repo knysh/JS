@@ -49,6 +49,12 @@ class Browser {
         });
     }
 
+    async findElements(by, name) {
+        return this.driver.findElements(by).catch((error) => {
+            logger.warning(`Cannot find elements ${error}: ${name}`);
+        });
+    }
+
     async isDisplayed(by, name) {
         try {
             return (await this.findElement(by, name)).isDisplayed();

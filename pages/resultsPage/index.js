@@ -12,6 +12,12 @@ class ResultsPage extends BasePage{
         const stats = await statsLabel.getText();
         return stats.match(/\s([\d\s]+)\s\(/)[1].replace(/\s+/g, '');
     }
+
+    async getSearchLink(rowNumber){
+        const searchLinks = await this.browser.findElements(locators.searchLink, "Search links");
+        const link = await searchLinks[rowNumber].getAttribute('href');
+        return link;
+    }
 }
 
 module.exports = ResultsPage;
