@@ -1,4 +1,4 @@
-const {assert} = require('chai');
+const {assert, expect, should} = require('chai');
 const { describe, it } = require('mocha');
 const Wait = require('../utils/wait.util');
 
