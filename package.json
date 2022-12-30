@@ -23,7 +23,7 @@
     "chai-http": "^4.3.0",
     "chai-webdriver": "^1.2.0",
     "chromedriver": "^78.0.1",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "mocha-allure-reporter": "^1.4.0",
     "selenium-webdriver": "^4.0.0-alpha.5"
   },
